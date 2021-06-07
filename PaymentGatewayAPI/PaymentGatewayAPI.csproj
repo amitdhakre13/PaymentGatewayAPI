@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>bb43ca34-c273-4a87-8a10-43c62b3a12f4</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaymentGatewayAPI.Configuration\PaymentGatewayAPI.Configuration.csproj" />
+    <ProjectReference Include="..\PaymentGatewayAPI.Services\PaymentGatewayAPI.Services.csproj" />
+  </ItemGroup>
+
+
+</Project>
