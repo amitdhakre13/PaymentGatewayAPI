@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using PaymentGatewayAPI.Configuration;
 using PaymentGatewayAPI.Dto;
 using PaymentGatewayAPI.PaymentStrategy;
@@ -13,17 +12,14 @@ namespace PaymentGatewayAPI.Services
     /// </summary>
     public class PaymentService : IPaymentService
     {
-        private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="mapper">mapper</param>
         /// <param name="options">options</param>
-        public PaymentService(IMapper mapper, IOptions<AppSettings> options)
+        public PaymentService(IOptions<AppSettings> options)
         {
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _appSettings = options == null ? throw new ArgumentNullException(nameof(options)) : options.Value;
         }
 
