@@ -23,6 +23,7 @@ namespace PaymentGatewayAPI.Controllers
         /// <param name="creditCardPaymentDto">creditCardPaymentDto</param>
         /// <returns>Failure or success</returns>
         [HttpPost]
+        [Consumes("application/payment.creditcard+json")]
         public async Task<bool> ProcessPayment(CreditCardPaymentDto creditCardPaymentDto)
         {
             bool processPayment = await _paymentService.ProcessPayment(creditCardPaymentDto).ConfigureAwait(false);
